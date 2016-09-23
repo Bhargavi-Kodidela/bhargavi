@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+    <script src="../jasmine.js"></script>
+    <script src="../jasmine-html.js"></script>
+    <script src="../boot.js"></script>
+
+    <script src="../angular.min.js"></script>
+    <script src="../angular-mocks.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	var app = angular.module('RDash',[]);
+	app.controller('AlertsCtrl', function($scope){
+		var vm = this;
+	    vm.alerted = alerted;
+	    vm.closeAlert = closeAlert;
+	    vm.alerts = AlertService.alerts;
+
+	    function alerted() {
+	        // Handle notification
+	        vm.alerts = AlertService.alerts;
+	    }
+
+	    function closeAlert(index) {
+	        AlertService.closeAlert(index);
+	    };
+
+	    AlertService.subscribe($scope, alerted);
+	});
+</script>
+
+</body>
+</html>

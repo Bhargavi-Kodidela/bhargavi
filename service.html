@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MF3HTTPService Example</title>
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+    <script src="jasmine.js"></script>
+    <script src="jasmine-html.js"></script>
+    <script src="boot.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>
+	<script src="angular.min.js"></script>
+    <script src="angular-mocks.js"></script>
+	<script type="text/javascript" src="service.js"></script>
+	<script type="text/javascript" src="service-ctrl.js"></script>
+	<script type="text/javascript" src="service-ctrl-specs.js"></script>
+</head>
+<body ng-app ="RDash" ng-controller ="TestController as test">
+<div >
+	<button ng-click= "test.listOfServices('https://api.myjson.com/bins/3pcxu')">Save</button>
+	<table border="solid" >
+	<thead style="background-color: greenyellow">
+		<td >Id</td>
+		<td >content</td>
+		<td >fileName</td>
+				
+	</thead>
+	<tbody>
+		<tr ng-repeat = "item in contents">
+			<td>{{item.id}}</td>
+			<td>{{item.content}}</td>
+			<td>{{item.fileName}}</td>
+		</tr>	
+	</tbody>	
+</table>
+</div>
+
+
+</body>
+</html>
