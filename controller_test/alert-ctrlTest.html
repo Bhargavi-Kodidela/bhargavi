@@ -13,7 +13,7 @@
 <body>
 <script type="text/javascript">
 	var app = angular.module('RDash',[]);
-	app.controller('AlertsCtrl', function($scope){
+	app.controller('AlertsCtrl', function($scope, AlertService){
 		var vm = this;
 	    vm.alerted = alerted;
 	    vm.closeAlert = closeAlert;
