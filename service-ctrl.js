@@ -1,7 +1,4 @@
-
-
-
-anular.module("RDash").controller("TestController",["$scope", "MF3HTTPService", TestController]);
+angular.module("RDash").controller("TestController",["$scope", "MF3HTTPService", TestController]);
 
 	function TestController($scope, MF3HTTPService){
 
@@ -31,20 +28,9 @@ anular.module("RDash").controller("TestController",["$scope", "MF3HTTPService", 
 
 
 
-	}
+	};
 
 
 
 
 
-
-
-
-
-A
-A
-B
-B
-
-C
-;
