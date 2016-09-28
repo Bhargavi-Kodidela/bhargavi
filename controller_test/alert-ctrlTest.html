@@ -3,34 +3,30 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
-    <script src="../jasmine.js"></script>
+	    <script src="../jasmine.js"></script>
     <script src="../jasmine-html.js"></script>
     <script src="../boot.js"></script>
 
     <script src="../angular.min.js"></script>
     <script src="../angular-mocks.js"></script>
+    <script type="text/javascript" src="alert-serviceTest.js"></script>
+    <script type="text/javascript" src="alert-serviceSpec.js"></script>
 </head>
-<body>
-<script type="text/javascript">
-	var app = angular.module('RDash',[]);
-	app.controller('AlertsCtrl', function($scope, AlertService){
-		var vm = this;
-	    vm.alerted = alerted;
-	    vm.closeAlert = closeAlert;
-	    vm.alerts = AlertService.alerts;
+<body ng-app="RDash">
 
-	    function alerted() {
-	        // Handle notification
-	        vm.alerts = AlertService.alerts;
-	    }
+<div ng-controller="myCtrl">
+		<div class="col-lg-7 col-md-6 col-sm-10 col-xs-12">
+			<button type="submit" class="btn btn-primary pull-right" ng-click="login()">Login</button>
+			<h3>{{Message}}</h3>
+		</div>
+</div>
 
-	    function closeAlert(index) {
-	        AlertService.closeAlert(index);
-	    };
-
-	    AlertService.subscribe($scope, alerted);
-	});
-</script>
-
+<div>
+	<div data-ng-controller="AlertsCtrl as messenger" data-ng-show="messenger.alerts.length">
+          <div class="col-xs-12">
+            <div ng-repeat="alert in messenger.alerts">{{alert.msg}}</div>
+          </div>
+    </div>
+</div>
 </body>
 </html>

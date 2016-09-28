@@ -15,7 +15,7 @@ describe("testing factory Service", function(){
     it('Test Get Functionality', function () {
 
     	console.log("Verifying result");
-    	expect(result).toEqual('abc');
+    	expect(result).toEqual('test1');
     });
 
 
