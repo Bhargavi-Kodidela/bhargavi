@@ -7,7 +7,7 @@ describe('alert service', function(){
 		beforeEach(inject(function($rootScope, $controller){
 			scope = $rootScope.$new();
 			//$q = $q;
-			ctrl = $controller('myCtrl as master', {$scope:scope});
+			ctrl = $controller('myCtrl', {$scope:scope});
 			
 		}));
 		it('should display the alert message', function(){
@@ -15,13 +15,10 @@ describe('alert service', function(){
 			console.log(scope.title);
 		});
 
-		it('should display the button alert message', function(){
-			
+		it('should display the button alert message', function(){	
 			scope.login();
 			expect(scope.Message).toEqual("button clicked");
 			console.log("button it's working " + scope.Message);
-			expect(scope.Message.addAlert).toBeDefined("button clicked");
-			console.log("is it working AlertService ");
 		});
 	});
 });
