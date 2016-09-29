@@ -57,10 +57,11 @@ angular
 	.controller('myCtrl', ['$scope', 'AlertService', myCtrl]);
 		function myCtrl($scope, AlertService){
 			var vm = this;
-			//vm.login = login;
+			vm.login = login;
 
 			$scope.title = "Alert Message";
-			$scope.login = function(){
+	
+			function login(){
 				$scope.Message = "button clicked";
 				console.log("click event");
 				AlertService.addAlert('success', "successful message: " + $scope.Message);

@@ -6,17 +6,19 @@ describe('alert service', function(){
 		var scope, ctrl, service, $q;
 		beforeEach(inject(function($rootScope, $controller){
 			scope = $rootScope.$new();
-			//$q = $q;
+			//https://gist.github.com/blesh/8846528 -->reference for factory service
+			//service = jasmine.createSpyObj('AlertServicexxxxx', ['addAlert']);
+			//service = AlertService;
 			ctrl = $controller('myCtrl', {$scope:scope});
 			
 		}));
-		it('should display the alert message', function(){
+		it('should display the title message', function(){
 			expect(scope.title).toBe("Alert Message");
 			console.log(scope.title);
 		});
 
-		it('should display the button alert message', function(){	
-			scope.login();
+		it('should display the button message', function(){	
+			ctrl.login();
 			expect(scope.Message).toEqual("button clicked");
 			console.log("button it's working " + scope.Message);
 		});
