@@ -60,7 +60,7 @@ angular
 			vm.login = login;
 
 			$scope.title = "Alert Message";
-	
+			
 			function login(){
 				$scope.Message = "button clicked";
 				console.log("click event");

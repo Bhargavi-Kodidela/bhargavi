@@ -22,5 +22,6 @@ describe('alert service', function(){
 			expect(scope.Message).toEqual("button clicked");
 			console.log("button it's working " + scope.Message);
 		});
+
 	});
 });
