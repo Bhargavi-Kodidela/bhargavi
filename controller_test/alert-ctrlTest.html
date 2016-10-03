@@ -16,15 +16,20 @@
 
 <div ng-controller="myCtrl as master">
 		<div class="col-lg-7 col-md-6 col-sm-10 col-xs-12">
-			<button type="submit" class="btn btn-primary pull-right" ng-click="master.login()">Login</button>
-			<h3>{{Message}}</h3>
+			<input type="text" ng-model="type">
+			<button type="submit" class="btn btn-primary pull-right" ng-click="master.login(type)">Login</button>
+			<br/>
+			<!-- <h3>{{type}}</h3> -->
+			
 		</div>
-</div>
+		
 
-<div>
 	<div data-ng-controller="AlertsCtrl as messenger" data-ng-show="messenger.alerts.length">
           <div class="col-xs-12">
-            <div ng-repeat="alert in messenger.alerts">{{alert.msg}}</div>
+            <div ng-repeat="alert in messenger.alerts">{{alert.msg}}
+            	<button ng-click="master.close(alert.alerts)"> X</button>
+            </div>
+          
           </div>
     </div>
 </div>

@@ -58,13 +58,20 @@ angular
 		function myCtrl($scope, AlertService){
 			var vm = this;
 			vm.login = login;
+			vm.close = close;
 
 			$scope.title = "Alert Message";
 			
-			function login(){
+			function login(type){
 				$scope.Message = "button clicked";
 				console.log("click event");
-				AlertService.addAlert('success', "successful message: " + $scope.Message);
+				AlertService.addAlert('success', "successful message: " + type);
 				console.log($scope.Message);
+			}
+
+			function close(alerts){
+				$scope.msg = "closed";
+				AlertService.closeAlert('close', "closed alert" + alerts);
+				console.log($scope.msg);
 			}
 		}
